@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Javascript session 1</title>
+
+        <script>
+            console.log("hello world !");
+
+            // Exercice 1
+
+            function displayTextBox() {
+                window.alert("hello world !");
+            };
+
+            displayTextBox();
+
+            //Exercice 2
+
+            // var a = "C'est une belle journée";les variables sont globales
+            // var b = "pour s'exercer à JS!";
+
+            function surUneLigne(mess1, mess2) {
+                console.log(mess1 + " " + mess2);
+            }
+            surUneLigne("C'est une belle journée", "pour s'entraîner à JS!") // les variables sont locales
+            surUneLigne("coucou, ", "ça va ?");
+
+            // Exercice 3
+
+            function multiplication(nombre1, nombre2) {
+                var resultat = nombre1 * nombre2;
+                if (isNaN(resultat)) {
+                    alert("Une erreur de calcul est survenue...");
+                }
+                return resultat;
+            }
+
+            function start() {
+                var res;
+                afficherResultat(multiplication(2, 2));
+                res = multiplication(2, 3);
+                console.log(res);
+                afficherResultat(res);
+                afficherResultat(calculPrixTTC(100));
+            }
+
+            function afficherResultat(res) {
+                var cible = document.getElementById("res");
+                cible.innerHTML += '<br>' + res;
+            }
+
+            // Exercice 4
+
+
+
+            function getName(user) {
+                return user1.name;
+                return user2.name;
+            };
+
+            function displayUserInfo(user) {
+                var cible = document.getElementById("res_user1");
+                cible.innerHTML += "Cet utilisateur se nommant" + " " + getName + " " + "est âgé de" + " " + getAge + "ans."
+            }
+
+            // Exercice TTC
+
+            function calculPrixTTC(prix) {
+                var taux = 1 + (7 /100);
+                console.log(taux);
+                return multiplication(prix, taux);
+            }
+
+            function start(){
+                var res;
+                var user1 = {
+                    name: "walid",
+                    age: 27
+                };
+
+                var user2 = {
+                    name: "Aymane",
+                    age: 23
+                };
+                afficherResultat(calculPrixTTC(100));
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+        <body onload="start();">
+
+            <div id="res">Résultat de l'opération...</div>
+
+            <div id="res_user1"></div>
+
+        </body>
+        </html>
